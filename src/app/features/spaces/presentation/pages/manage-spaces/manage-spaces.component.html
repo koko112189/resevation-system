@@ -1,0 +1,19 @@
+<h1>Gestionar Espacios</h1>
+<form [formGroup]="spaceForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre del Espacio</mat-label>
+    <input matInput formControlName="name" />
+    <mat-error *ngIf="spaceForm.controls['name'].hasError('required')">
+      El nombre del espacio es obligatorio.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Capacidad</mat-label>
+    <textarea matInput formControlName="capacity"></textarea>
+  </mat-form-field>
+  <div class="button-group">
+  <button mat-raised-button color="primary" type="submit" [disabled]="spaceForm.invalid">Crear Espacio</button>
+  <button mat-raised-button color="accent" type="button" (click)="onBack()">Regresar</button>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h1>Nueva Reservación</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Espacio a reservar</mat-label>
+      <mat-select formControlName="space">
+        <mat-option *ngFor="let space of spaces" [value]="space.id">
+          {{ space.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.controls['space'].hasError('required')">
+        El espacio es obligatorio.
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha de Inicio</mat-label>
+      <input matInput type="datetime-local" formControlName="startDateTime" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha de Fin</mat-label>
+      <input matInput type="datetime-local" formControlName="endDateTime" />
+    </mat-form-field>
+    <div *ngIf="message" class="message" [ngClass]="{'success': messageType === 'success', 'error': messageType === 'error'}">
+      {{ message }}
+    </div>
+    <div class="button-group">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Reservar</button>
+      <button mat-raised-button color="accent" type="button" (click)="onBack()">Regresar</button>
+    </div>
+  </form>
+</div>

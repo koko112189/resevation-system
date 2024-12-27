@@ -1,0 +1,50 @@
+/* filepath: /c:/Users/John/source/repos/resevation-system/src/app/features/reservations/form/form.component.scss */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.message {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.message.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.message.error {
+  background-color: #f2dede;
+  color: #a94442;
+}

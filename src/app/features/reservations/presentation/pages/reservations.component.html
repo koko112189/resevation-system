@@ -1,0 +1,8 @@
+<h1>Reservas</h1>
+<div class="button-container">
+  <button mat-raised-button color="primary" [routerLink]="['/reservations/new']">Nueva Reserva</button>
+  <button mat-raised-button color="primary" [routerLink]="['/spaces/new']">Gestionar Espacios</button>
+</div>
+<div class="calendar-container">
+  <app-calendar [reservations]="reservations" [spaces]="spaces"></app-calendar>
+</div>

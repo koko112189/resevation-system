@@ -1,0 +1,29 @@
+<div class="filter-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Espacio</mat-label>
+      <mat-select [(ngModel)]="selectedSpace" (selectionChange)="onFilterChange()">
+        <mat-option *ngFor="let space of spaces" [value]="space.id">
+          {{ space.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Usuario</mat-label>
+      <input matInput [(ngModel)]="selectedUser" (input)="onFilterChange()" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha de Inicio</mat-label>
+      <input matInput type="date" [(ngModel)]="startDate" (change)="onFilterChange()" />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Fecha de Fin</mat-label>
+      <input matInput type="date" [(ngModel)]="endDate" (change)="onFilterChange()" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="resetFilters()">Reiniciar Filtros</button>
+
+  </div>
+<full-calendar [options]="calendarOptions" [events]="calendarEvents"></full-calendar>
