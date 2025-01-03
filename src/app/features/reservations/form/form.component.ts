@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CreateSpaceUseCase } from '../application/use-cases/create-space-usecase';
+import { CreateSpaceUseCase } from '../../spaces/application/use-cases/create-space-usecase';
 import { SpaceRepository } from '../infrastructure/repositories/space.repository';
 import { Space } from '../../../core/models/space.entity';
 import { MatSelect, MatSelectModule } from '@angular/material/select';

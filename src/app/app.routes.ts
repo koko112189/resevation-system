@@ -27,4 +27,11 @@ export const routes: Routes = [
                 (m) => m.ManageSpacesComponent
             )
     },
+    {
+        path: 'users/new',
+        loadComponent: () =>
+            import('./features/users/presentation/pages/manage-spaces/manage-users.component').then(
+                (m) => m.ManageusersComponent
+            )
+    },
 ];
