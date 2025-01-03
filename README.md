@@ -1,44 +1,80 @@
 # ResevationSystem
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+Este es un sistema de gestión de reservas que permite a los usuarios crear, ver y gestionar reservas de espacios. La aplicación está construida con Angular y utiliza Angular Material para la interfaz de usuario.
 
-## Development server
+## Características
 
-To start a local development server, run:
+- Crear nuevas reservas
+- Ver reservas existentes en un calendario
+- Filtrar reservas por espacio, usuario y rango de fechas
+- Eliminar reservas
+- Gestionar espacios (crear nuevos espacios)
+
+## Requisitos
+
+- Node.js (versión 12 o superior)
+- Angular CLI (versión 12 o superior)
+
+## Instalación
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/tu-usuario/sistema-de-gestion-de-reservas.git
+   cd sistema-de-gestion-de-reservas
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+## Uso y despliegue
+
+1. Inicia el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+2. Abre tu navegador y navega a `http://localhost:4200/`
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+## Estructura del Proyecto
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Componentes Principales
+ReservationsComponent
+Este componente muestra una lista de reservas y permite crear nuevas reservas.
 
-```bash
-ng generate --help
-```
+ManageSpacesComponent
+Este componente permite gestionar los espacios, incluyendo la creación de nuevos espacios.
+
+CalendarComponent
+Este componente muestra las reservas en un calendario y permite filtrar las reservas por espacio, usuario y rango de fechas.
+
+Casos de Uso
+CreateReservationUseCase
+Este caso de uso maneja la lógica para crear nuevas reservas.
+
+CreateSpaceUseCase
+Este caso de uso maneja la lógica para crear nuevos espacios.
+
+Servicios
+ReservationRepository
+Este servicio maneja las operaciones CRUD para las reservas.
+
+SpaceRepository
+Este servicio maneja las operaciones CRUD para los espacios.
 
 ## Building
 
-To build the project run:
+Para construir elproyecto
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Ejecutar pruebas unitarias
 
 ```bash
 ng test
@@ -52,8 +88,20 @@ For end-to-end (e2e) testing, run:
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Decisiones Arquitectónicas
 
-## Additional Resources
+Modularización
+La aplicación está dividida en módulos para mejorar la organización y la mantenibilidad del código. Cada módulo representa una característica principal de la aplicación, como reservations y spaces.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+Uso de Casos de Uso
+Se utilizan casos de uso (use-cases) para encapsular la lógica de negocio. Esto permite separar la lógica de negocio de los componentes de presentación y facilita la reutilización y las pruebas unitarias.
+
+
+Repositorios
+Los repositorios (repositories) se encargan de las operaciones CRUD y la comunicación con la API. Esto permite centralizar la lógica de acceso a datos y facilita el cambio de la fuente de datos si es necesario.
+
+
+Componentes de Presentación
+Los componentes de presentación (presentation) se encargan de la interfaz de usuario y la interacción con el usuario. Se dividen en pages y components para una mejor organización.
+
